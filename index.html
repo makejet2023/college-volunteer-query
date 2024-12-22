@@ -43,7 +43,7 @@
             const city = document.getElementById('city').value;
             const schoolType = document.getElementById('school_type').value;
 
-            fetch(`https://college-query-system-q1cdj2s2a-makejet2023-outlookcoms-projects.vercel.app/search?rank=${rank}&city=${city}&school_type=${schoolType}`)
+            fetch(`/search?rank=${rank}&city=${city}&school_type=${schoolType}`)
                 .then(response => response.json())
                 .then(data => {
                     // 按位次排序

@@ -1,3 +1,17 @@
-pandas
-flask
-flask-cors
+import pandas as pd
+import sqlite3
+
+# 读取Excel文件
+excel_file = 'schools.xlsx'
+df = pd.read_excel(excel_file)
+
+# 连接到SQLite数据库（如果数据库不存在，将会创建一个新的）
+conn = sqlite3.connect('schools.db')
+
+# 将数据写入数据库，表名为'schools'
+df.to_sql('schools', conn, if_exists='replace', index=False)
+
+# 关闭数据库连接
+conn.close()
+
+print("数据已成功导入到SQLite数据库中。") 
