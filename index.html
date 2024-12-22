@@ -27,7 +27,7 @@
             <input type="number" id="rank" placeholder="输入位次" required>
             <input type="text" id="city" placeholder="输入城市">
             <select id="school_type">
-                <option value="">选择学校类��</option>
+                <option value="">选择学校类型</option>
                 <option value="985">985</option>
                 <option value="211">211</option>
                 <option value="双非">双非</option>
@@ -43,7 +43,7 @@
             const city = document.getElementById('city').value;
             const schoolType = document.getElementById('school_type').value;
 
-            fetch(`https://college-query-system-mgqlrvx99-makejet2023-outlookcoms-projects.vercel.app/search?rank=${rank}&city=${city}&school_type=${schoolType}`)
+            fetch(`https://college-query-system-q1cdj2s2a-makejet2023-outlookcoms-projects.vercel.app/search?rank=${rank}&city=${city}&school_type=${schoolType}`)
                 .then(response => response.json())
                 .then(data => {
                     // 按位次排序
