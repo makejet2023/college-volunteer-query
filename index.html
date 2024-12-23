@@ -27,7 +27,7 @@
             <input type="number" id="rank" placeholder="输入位次" required>
             <input type="text" id="city" placeholder="输入城市">
             <select id="school_type">
-                <option value="">选择学校类型</option>
+                <option value="">选择学校类��</option>
                 <option value="985">985</option>
                 <option value="211">211</option>
                 <option value="双非">双非</option>
@@ -46,6 +46,7 @@
             fetch(`https://gkzy.pages.dev/search?rank=${rank}&city=${city}&school_type=${schoolType}`)
                 .then(response => response.json())
                 .then(data => {
+                    console.log(data);
                     // 按位次排序
                     data.sort((a, b) => a[3] - b[3]);
 
