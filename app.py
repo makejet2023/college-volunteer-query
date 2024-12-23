@@ -42,7 +42,10 @@ def query_schools(rank, city=None, school_type=None):
     results = cursor.fetchall()
     conn.close()
 
-    return results
+    # 将结果转换为JSON格式
+    json_results = [dict(zip([column[0] for column in cursor.description], row)) for row in results]
+
+    return json_results
 
 @app.route('/search', methods=['GET'])
 def search():
