@@ -54,6 +54,7 @@ def search():
     school_type = request.args.get('school_type')
 
     results = query_schools(rank, city, school_type)
+    print(results)  # 调试输出
     return jsonify(results)
 
 @app.route('/table_info', methods=['GET'])
